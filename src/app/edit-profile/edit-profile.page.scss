@@ -1,0 +1,37 @@
+.wrapper {
+    position: relative;
+  }
+.align {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 160px;
+    height: 160px;
+    border-radius: 60%;
+    overflow: hidden;
+  }
+ 
+  .footer{
+    padding-bottom: 25px;
+}
+.save{
+    width: 100%;      
+    background-color:  white;
+    color: red;
+}
+.form{
+    padding-top: 10px;
+}
+
+.container{
+    background-color: #46c4f2;
+    height: 45%;
+    margin: 30px;
+    
+}
+.password{
+    margin-left: 80px;
+  }

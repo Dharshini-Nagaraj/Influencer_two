@@ -1,0 +1,32 @@
+.wrapper {
+    position: relative;
+  }
+.avatar {
+    vertical-align: middle;
+    width: 160px;
+    height: 160px;
+    border-radius: 60%;
+    overflow: hidden;
+  }
+  .align {
+      padding-top: 10px;
+      text-align: center;
+  }
+ 
+  .logout{
+      width: 100%;      
+      background-color:  white;
+      color: red;
+  }
+  .footer{
+      padding-bottom: 25px;
+  }
+  .container{
+    background-color: #46c4f2;
+    height: 45%;
+    margin: 30px;
+    
+}
+.edit{
+  margin-left: 190px;
+}

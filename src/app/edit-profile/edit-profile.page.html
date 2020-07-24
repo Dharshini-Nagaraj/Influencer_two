@@ -1,0 +1,46 @@
+<ion-content>
+
+  <div class="container">
+    <a routerLink="/customer-settings" routerDirection="backward">
+      <ion-button color="white">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </a>
+    <div class="align">
+      <img class="avatar" mat-card-md-image src="../../../assets/icon/Cristiano.png">
+      <div class="wrapper">
+        <ion-card>
+          <form class="form" [formGroup]="editProfile">
+            <ion-item>
+              <ion-label position="floating">User Name</ion-label>
+              <ion-input type="text" formControlName="userName"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Phone Number</ion-label>
+              <ion-input type="number" formControlName="phoneNumber"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Change Password</ion-label>              
+              <a routerLink="/change-password" ><ion-icon slot="end" name="chevron-forward-outline"></ion-icon></a>
+            </ion-item>
+            <!-- <ion-item>
+              <a routerLink="/change-password" >
+                <ion-icon name="chevron-forward-outline" slot="end" ></ion-icon>
+              </a>
+              <ion-label position="floating">Change Password</ion-label>
+                
+            </ion-item> -->
+          </form>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="footer">
+    <button mat-stroked-button class="save" (click)="showMessageSoon()">
+      Save Changes
+    </button>
+  </div>
+</ion-footer>

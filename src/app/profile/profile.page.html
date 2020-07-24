@@ -1,0 +1,51 @@
+<ion-content style="text-align: center;">
+  <!-- <ion-header style="text-align: left;">
+    <ion-toolbar style="margin: 0;padding: 0;">
+      <ion-title><ion-button color="primary"><ion-icon name="arrow-back"></ion-icon></ion-button></ion-title>
+    </ion-toolbar>
+  </ion-header>   -->
+
+  <img src="../../../assets/icon/Cristiano.png" alt="profilepic">
+
+  <ion-card style="height: 87%;">
+    <!-- <ion-button color="light" expand="full" fill="clear"><ion-icon name="settings" slot="icon-only" color="dark" class="settings"></ion-icon></ion-button> -->
+
+    <ion-card-header class="head">
+      <ion-card-title><h6 style="color: darkgray;"> Cristiano Ronaldo
+       <!-- <a>
+        <ion-icon name="pencil" slot="icon-only" color="dark"class="create"></ion-icon>
+       </a>  -->
+      </h6>
+      <h5>wobb.in/cristiano
+        <a>
+          <ion-icon name="pencil" slot="icon-only" color="dark"class="create"></ion-icon>
+         </a> 
+      </h5>
+      </ion-card-title> 
+      <ion-card-subtitle style="text-align: left;color: black;">About</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="content">
+      <a>
+        <ion-icon name="pencil" slot="icon-only" color="dark"class="creates"></ion-icon>
+       </a>
+      Cristiano Ronaldo is a Portuguese professional footballer.
+   
+    </ion-card-content>
+ 
+    <ion-toolbar>
+      <ion-segment value="instagram" color="danger" [(ngModel)]="segment">
+        <ion-segment-button value="instagram" >Instagram</ion-segment-button>
+        <ion-segment-button value="youtube">Youtube</ion-segment-button>
+      </ion-segment>
+      <div [ngSwitch]="segment">
+        <div *ngSwitchCase="'instagram'" >
+          <ion-button class="insta" size="medium" color="danger" shape="round" >Connect To Instagram</ion-button>
+          <ion-button class="insta" size="medium" color="danger" shape="round"> Create Your Gig </ion-button>
+        </div>
+        </div>
+    </ion-toolbar>
+   
+    
+  </ion-card>
+
+</ion-content>

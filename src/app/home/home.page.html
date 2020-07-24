@@ -1,0 +1,34 @@
+<ion-toolbar>
+  <ion-button color="danger" size="small" shape="round" class="myStore">
+    My Store
+  </ion-button>
+    <ion-button shape="round" size="small" color="danger" fill=outline class="channel">
+      <ion-select value="youtube" >
+        <ion-select-option value="youtube">Youtube</ion-select-option>
+        <ion-select-option value="instagram">Instagram</ion-select-option>          
+        <ion-select-option value="all">All</ion-select-option>
+        <ion-select-option value="eligible">Eligible</ion-select-option>
+      </ion-select>
+    </ion-button>
+
+</ion-toolbar>
+<ion-content>
+<ion-card routerLink="/campaign-details">
+  <img class="img" src="./assets/colorbar.jpg" />
+  <ion-card-header >
+    <ion-card-title>ColorBar Matte Lipstick </ion-card-title>    
+    <ion-button class="seats" size="small" color="light"  shape="round">Seats full</ion-button> 
+    <ion-card-subtitle>ColorBar</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>Earn ₹1000 cash price </ion-card-content>
+</ion-card>
+<ion-card >
+  <img class="img"  src="./assets/mamaearth.jpg" />
+  <ion-card-header >
+    <ion-card-title>Hair Care Enrich With Onion</ion-card-title>    
+    <ion-button class="seats" size="small" color="light"  shape="round">Seats full</ion-button> 
+    <ion-card-subtitle>Mamaearth</ion-card-subtitle>  
+  </ion-card-header>
+  <ion-card-content>Earn ₹1000 cash price </ion-card-content>
+</ion-card>
+</ion-content>
