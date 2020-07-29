@@ -71,7 +71,21 @@ const routes: Routes = [
   {
     path: 'contact-youtube',
     loadChildren: () => import('./explore/contact-youtube/contact-youtube.module').then( m => m.ContactYoutubePageModule)
+  },
+  {
+    path: 'views',
+    loadChildren: () => import('./explore/views/views.module').then( m => m.ViewsPageModule)
+  },
+  {
+    path: 'videos',
+    loadChildren: () => import('./explore/videos/videos.module').then( m => m.VideosPageModule)
+  },
+  {
+    path: 'channel',
+    loadChildren: () => import('./explore/channel/channel.module').then( m => m.ChannelPageModule)
   }
+
+
 
 
 

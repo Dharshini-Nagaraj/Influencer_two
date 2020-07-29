@@ -29,6 +29,7 @@
     "@ionic/angular": "^5.0.0",
     "auth0-js": "^9.13.2",
     "ionic4-rating": "^1.0.9",
+    "ng5-slider": "^1.2.4",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

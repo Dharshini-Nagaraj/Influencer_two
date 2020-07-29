@@ -10,6 +10,9 @@ import { ContactPage } from './contact/contact.page';
 import { FollowersPage } from './followers/followers.page';
 import { EngagementPage } from './engagement/engagement.page';
 import { ContactYoutubePage } from './contact-youtube/contact-youtube.page';
+import { ViewsPage } from './views/views.page';
+import { VideosPage } from './videos/videos.page';
+import { ChannelPage } from './channel/channel.page';
 
 @Component({
   selector: 'app-explore',
@@ -64,6 +67,18 @@ export class ExplorePage implements OnInit {
   toast.present();
 
 } 
+async presentVideos() {
+  const popover = await this.popoverController.create({
+    component: VideosPage,
+  });
+  return await popover.present();
+}
+async presentChannel() {
+  const popover = await this.popoverController.create({
+    component: ChannelPage,
+  });
+  return await popover.present();
+}
 async presentContact() {
   const popover = await this.popoverController.create({
     component: ContactPage,
@@ -73,6 +88,12 @@ async presentContact() {
 async presentContactYoutube() {
   const popover = await this.popoverController.create({
     component: ContactYoutubePage,
+  });
+  return await popover.present();
+}
+async presentViews() {
+  const popover = await this.popoverController.create({
+    component: ViewsPage,
   });
   return await popover.present();
 }
