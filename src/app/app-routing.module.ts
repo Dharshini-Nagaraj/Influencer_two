@@ -59,7 +59,22 @@ const routes: Routes = [
   {
     path: 'notes',
     loadChildren: () => import('./explore/notes/notes.module').then( m => m.NotesPageModule)
+  },
+  {
+    path: 'followers',
+    loadChildren: () => import('./explore/followers/followers.module').then( m => m.FollowersPageModule)
+  },
+  {
+    path: 'engagement',
+    loadChildren: () => import('./explore/engagement/engagement.module').then( m => m.EngagementPageModule)
+  },
+  {
+    path: 'contact-youtube',
+    loadChildren: () => import('./explore/contact-youtube/contact-youtube.module').then( m => m.ContactYoutubePageModule)
   }
+
+
+
 
 ];
 

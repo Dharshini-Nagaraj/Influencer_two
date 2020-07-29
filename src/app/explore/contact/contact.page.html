@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons fill="outline" color="dark" slot="end" (click)="dismiss()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <p style="font-weight: bold; padding-left: 10px; font-size: small;">Public Contact<ion-icon name="information-circle"></ion-icon>
+  </p>
+
+  <ion-item lines="none" style=" font-size: small;">
+    <ion-label>Accounts with email</ion-label>
+    <ion-toggle slot="start" name="accounts" color="success"></ion-toggle>
+  </ion-item>
+  <p style="font-weight: bold; padding-left: 10px; font-size: small;">Other Channels<ion-icon name="information-circle"></ion-icon>
+  </p>
+  <ion-item lines="none" style=" font-size: small;">
+    <ion-label><ion-icon name="logo-facebook" style="padding-right: 8px;"></ion-icon>Facebook</ion-label>
+    <ion-checkbox color="dark" slot="start" ></ion-checkbox>
+  </ion-item >
+  <ion-item lines="none" style=" font-size: small;">
+    <ion-label><ion-icon name="logo-snapchat"  style="padding-right: 8px;"></ion-icon>Snapchat</ion-label>
+    <ion-checkbox color="dark" slot="start"></ion-checkbox>
+  </ion-item >
+  <ion-item lines="none" style=" font-size: small;">
+    <ion-label><ion-icon name="logo-twitter"  style="padding-right: 8px;"></ion-icon>Twitter</ion-label>
+    <ion-checkbox color="dark" slot="start"></ion-checkbox>
+  </ion-item>
+  <p style="font-weight: bold; padding-left: 10px;"> Account types<ion-icon name="information-circle"></ion-icon>
+  </p>
+  <ion-item lines="none" style=" font-size: small;">
+    <ion-label>Hidden Business Account</ion-label>
+    <ion-checkbox color="dark" slot="start"></ion-checkbox>
+  </ion-item>
+  <ion-item lines="none" style=" font-size: small;">
+    <ion-label>Only Business Account</ion-label>
+    <ion-checkbox color="dark" slot="start"></ion-checkbox>
+  </ion-item>
+  <ion-item lines="none"style=" font-size: small;">
+    <ion-label>Only Instagram Verified <ion-icon name="checkmark-circle" style="padding-left:8px ;"></ion-icon></ion-label>
+    <ion-checkbox color="dark" slot="start"></ion-checkbox>
+  </ion-item>
+
+  <ion-button color="success"  (click)="dismiss()" style="padding-left: 10px;">Apply</ion-button>
+</ion-content>

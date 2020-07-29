@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ExplorePageRoutingModule } from './explore-routing.module';
+import { ContactYoutubePageRoutingModule } from './contact-youtube-routing.module';
 
-import { ExplorePage } from './explore.page';
-import { FilterPipe } from '../home/filter.pipe';
+import { ContactYoutubePage } from './contact-youtube.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ExplorePageRoutingModule
+    ContactYoutubePageRoutingModule
   ],
-  declarations: [ExplorePage,FilterPipe]
+  declarations: [ContactYoutubePage]
 })
-export class ExplorePageModule {}
+export class ContactYoutubePageModule {}

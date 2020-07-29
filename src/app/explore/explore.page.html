@@ -5,7 +5,7 @@
       <img style="height: 40px; margin-top: 20px;" src="./assets/Wobb-Logo.png" />
     </div>
 
-    <ion-select value="instagram" style="margin-left: 2px;border: 1px solid rgb(130, 133, 134); ">
+    <ion-select value="instagram" style="margin-left: 2px;border: 1px solid rgb(130, 133, 134); " [(ngModel)]="select">
       <ion-select-option value="instagram">Instagram</ion-select-option>
       <ion-select-option value="youtube">Youtube</ion-select-option>
     </ion-select>
@@ -16,29 +16,149 @@
 
   </ion-item>
   <ion-item lines="none" style="width:100%;margin-top: 6px;margin-bottom: 10px;">
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar [(ngModel)]="value" inputmode="text" placeholder="Filter by Name,Followers,Engagement"></ion-searchbar>
   </ion-item>
+<div [ngSwitch]="select">
+  <div *ngSwitchCase="'instagram'" >
+    <ion-item lines="none" style="margin-top: 10px;margin-bottom: 10px;"  >
+      <ion-button size="small" fill="outline" color="medium" style="margin-right: 5px; " (click)="presentPopover () ">
+        Categories</ion-button>
+      <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;" (click)="presentLocation() ">
+        Location</ion-button>
+      <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;" (click)="presentFollower()">
+        Followers</ion-button>
+      <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;" (click)="presentEngage()">
+        Engagement</ion-button>
+      <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;"  (click)="presentContact() ">
+        Contact
+      </ion-button>
+      <!-- <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">
+        Audience</ion-button>
+      <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">
+        Authenticity</ion-button>
+      <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">
+        Advanced metrics</ion-button>   -->
+    </ion-item>
+   
 
-  <ion-item lines="none" style="margin-top: 10px;margin-bottom: 10px;">
-    <ion-button size="small" fill="outline" color="medium" style="margin-right: 5px; " (click)="presentPopover () ">
-      Categories</ion-button>
-    <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;" (click)="presentLocation() ">
+    <div style="margin-top: 20px;     background: hsla(0,0%,93%,.7)!important;">
+      <div>
+        <p
+          style="font-family: Source Sans Pro,sans-serif;     color: #111;   font-size: 16px;padding-top: 20px; margin-bottom: 0px;padding-left: 21px;">
+          More than 1M results</p>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let item of items|filter:value;let i=index;" sizeLg="3" sizeMd="6" sizeXs="12" >
+            <ion-card >
+              <div style="margin-top:10px; margin-left: 10px;">
+                <ion-avatar style="width:100% !important;  
+             height : 100% !important;  
+             max-width: 120px !important; 
+             max-height: 120px !important; ">
+                  <img src="./assets/2.png" />
+                </ion-avatar>
+                <p
+                  style=" margin-right: 3px; margin-bottom: 2px; font-weight: bold;  margin-top: -100px;   margin-left: 140px; color: #2a416f!important;">
+                  {{item[1]}}</p>
+                <p
+                  style="margin-right: 3px; margin-bottom: 2px;   margin-top: 0px;  margin-left: 140px;color: #868e96!important;    font-size: 12px;">
+                  {{item[0]}}</p>
+                <p
+                  style=" margin-right: 3px;  margin-top: 9px;    margin-left: 140px; color: #868e96!important;    font-size: 14px;">
+                  Be confident and be kind to your body</p>
+              </div>
+  
+              <ion-grid >
+                <ion-row>
+                  <ion-col style="margin-left: 50px;" >
+                    <p style="    color: #000;
+                   font-size: 30px;
+                   font-weight: 700; margin-bottom: 0px;">{{item[2]}}</p>
+                    <p style="font-size: 14px;
+                   font-weight: 400;color: #868e96!important;margin-top: 5px; "> FOLLOWERS</p>
+                  </ion-col>
+                  <ion-col>
+                    <p style="    color: #000;
+                   font-size: 30px;
+                   font-weight: 700; margin-bottom: 0px;">{{item[3]}}</p>
+                    <p style="font-size: 14px;
+                   font-weight: 400;color: #868e96!important;margin-top: 5px;">ENGAGEMENT</p>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col style="margin-left: -15px;    padding: 0px;">
+                    <ion-item lines="none">
+  
+                      <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
+                      <p style="margin-left: 3px; font-size: small;">Plus Size</p>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col style="    margin-left: -80px;  padding: 0px; ">
+                    <ion-item lines="none">
+                      <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
+                      <p style="margin-left: 3px;font-size: small;">Fashion</p>
+                    </ion-item>
+  
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-item style="margin-top: -19px; margin-left: -15px;">
+                <ion-icon style=" font-size: 15px;" name="location"></ion-icon>
+                <p style="margin-left: 3px;font-size: small;">California, United States</p>
+              </ion-item>
+              <ion-item lines="none" style="margin-left: -15px;">
+                <ion-button shape="round" color="light" size="small" style="padding:0px; padding-right: 5px;">
+                  <ion-icon style="font-size: 15px;" name="chevron-back-outline"></ion-icon>
+                </ion-button>
+                <ion-button shape="round" color="light" size="small" style="padding:0px;">
+                  <ion-icon style="font-size: 15px;" name="chevron-forward-outline"></ion-icon>
+                </ion-button>
+                <div style="position:absolute; right:0;">
+                  <a (click)="presentRating()">
+                    <ion-icon style="padding: 5px;font-size: 20px;color: #000; " name="star-outline"></ion-icon>
+                  </a>
+                  <a (click)="presentNotes()">
+                    <ion-icon style="padding: 5px;font-size: 20px;color: #000;" name="chatbox-outline"></ion-icon>
+                  </a>
+                  <a>
+                    <ion-icon (click)="book()" *ngIf="!bookmark" style="padding: 5px;font-size: 20px;color: #000;"
+                      name="bookmark-outline"></ion-icon>
+  
+                  </a>
+                  <a>
+                    <ion-icon (click)="book2()" *ngIf="bookmark" style="padding: 5px;font-size: 20px;color: #000;"
+                      name="bookmark"></ion-icon>
+  
+                  </a>
+                </div>
+              </ion-item>
+            </ion-card>
+  
+          </ion-col>
+  
+        </ion-row>
+      </ion-grid>
+  
+    </div>  
+  </div>
+  <div *ngSwitchCase="'youtube'" >
+    <ion-item lines="none" style="margin-top: 10px;margin-bottom: 10px;"  >
+      <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;" (click)="presentLocation() ">
       Location</ion-button>
+    <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;" (click)="presentFollower()">
+      Subscribers</ion-button>
     <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">
-      Followers</ion-button>
-    <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">
-      Engagement</ion-button>
-    <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">Contact
+      Views</ion-button>
+    <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;"  >
+      Videos
     </ion-button>
     <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">
-      Audience</ion-button>
-    <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">
-      Authenticity</ion-button>
-    <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;">
-      Advanced metrics</ion-button>
-
-
+      Channel</ion-button>
+    <ion-button size="small" fill="outline" color="medium" style=" margin-right: 5px;" (click)="presentContactYoutube() ">
+      Conatct</ion-button>
   </ion-item>
+   
 
   <div style="margin-top: 20px;     background: hsla(0,0%,93%,.7)!important;">
     <div>
@@ -48,8 +168,8 @@
     </div>
     <ion-grid>
       <ion-row>
-        <ion-col>
-          <ion-card>
+        <ion-col *ngFor="let youtube of youtubes |filter:value;let i=index;" sizeLg="3" sizeMd="6" sizeXs="12">
+          <ion-card >
             <div style="margin-top:10px; margin-left: 10px;">
               <ion-avatar style="width:100% !important;  
            height : 100% !important;  
@@ -59,11 +179,8 @@
               </ion-avatar>
               <p
                 style=" margin-right: 3px; margin-bottom: 2px; font-weight: bold;  margin-top: -100px;   margin-left: 140px; color: #2a416f!important;">
-                @manov1</p>
-              <p
-                style="margin-right: 3px; margin-bottom: 2px;   margin-top: 0px;  margin-left: 140px;color: #868e96!important;    font-size: 12px;">
-                manov patel </p>
-              <p
+                {{youtube[1]}}</p>
+                         <p
                 style=" margin-right: 3px;  margin-top: 9px;    margin-left: 140px; color: #868e96!important;    font-size: 14px;">
                 Be confident and be kind to your body</p>
             </div>
@@ -73,38 +190,23 @@
                 <ion-col style="margin-left: 50px;">
                   <p style="    color: #000;
                  font-size: 30px;
-                 font-weight: 700; margin-bottom: 0px;">270K</p>
+                 font-weight: 700; margin-bottom: 0px;">{{youtube[2]}}</p>
                   <p style="font-size: 14px;
-                 font-weight: 400;color: #868e96!important;margin-top: 5px; "> FOLLOWERS</p>
+                 font-weight: 400;color: #868e96!important;margin-top: 5px; "> SUBSCRIBERS</p>
                 </ion-col>
                 <ion-col>
                   <p style="    color: #000;
                  font-size: 30px;
-                 font-weight: 700; margin-bottom: 0px;">13.0%</p>
+                 font-weight: 700; margin-bottom: 0px;">{{youtube[3]}}</p>
                   <p style="font-size: 14px;
-                 font-weight: 400;color: #868e96!important;margin-top: 5px;">ENGAGEMENT</p>
+                 font-weight: 400;color: #868e96!important;margin-top: 5px;">VIEWS</p>
                 </ion-col>
               </ion-row>
-              <ion-row>
-                <ion-col style="margin-left: -15px;    padding: 0px;">
-                  <ion-item lines="none">
-
-                    <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
-                    <p style="margin-left: 3px; font-size: small;">Plus Size</p>
-                  </ion-item>
-                </ion-col>
-                <ion-col style="    margin-left: -80px;  padding: 0px; ">
-                  <ion-item lines="none">
-                    <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
-                    <p style="margin-left: 3px;font-size: small;">Fashion</p>
-                  </ion-item>
-
-                </ion-col>
-              </ion-row>
+             
             </ion-grid>
             <ion-item style="margin-top: -19px; margin-left: -15px;">
               <ion-icon style=" font-size: 15px;" name="location"></ion-icon>
-              <p style="margin-left: 3px;font-size: small;">California, United States</p>
+              <p style="margin-left: 8px;font-size: small;">{{youtube[4]}}</p>
             </ion-item>
             <ion-item lines="none" style="margin-left: -15px;">
               <ion-button shape="round" color="light" size="small" style="padding:0px; padding-right: 5px;">
@@ -136,232 +238,11 @@
 
         </ion-col>
 
-        <ion-col>
-          <ion-card>
-            <div style="margin-top:10px; margin-left: 10px;">
-              <ion-avatar style="width:100% !important;  
-           height : 100% !important;  
-           max-width: 120px !important; 
-           max-height: 120px !important; ">
-                <img src="./assets/2.png" />
-              </ion-avatar>
-              <p
-                style=" margin-right: 3px; margin-bottom: 2px; font-weight: bold;  margin-top: -100px;   margin-left: 140px; color: #2a416f!important;">
-                @manov1</p>
-              <p
-                style="margin-right: 3px; margin-bottom: 2px;   margin-top: 0px;  margin-left: 140px;color: #868e96!important;    font-size: 12px;">
-                manov patel </p>
-              <p
-                style=" margin-right: 3px;  margin-top: 9px;    margin-left: 140px; color: #868e96!important;    font-size: 14px;">
-                Be confident and be kind to your body</p>
-            </div>
-
-            <ion-grid>
-              <ion-row>
-                <ion-col style="margin-left: 50px;">
-                  <p style="    color: #000;
-                 font-size: 30px;
-                 font-weight: 700; margin-bottom: 0px;">270K</p>
-                  <p style="font-size: 14px;
-                 font-weight: 400;color: #868e96!important;margin-top: 5px; "> FOLLOWERS</p>
-                </ion-col>
-                <ion-col>
-                  <p style="    color: #000;
-                 font-size: 30px;
-                 font-weight: 700; margin-bottom: 0px;">13.0%</p>
-                  <p style="font-size: 14px;
-                 font-weight: 400;color: #868e96!important;margin-top: 5px;">ENGAGEMENT</p>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col style="margin-left: -15px;    padding: 0px;">
-                  <ion-item lines="none">
-
-                    <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
-                    <p style="margin-left: 3px; font-size: small;">Plus Size</p>
-                  </ion-item>
-                </ion-col>
-                <ion-col style="    margin-left: -80px;    padding: 0px; ">
-                  <ion-item lines="none">
-                    <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
-                    <p style="margin-left: 3px;font-size: small;">Fashion</p>
-                  </ion-item>
-
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item style="margin-top: -19px; margin-left: -15px;">
-              <ion-icon style=" font-size: 15px;" name="location"></ion-icon>
-              <p style="margin-left: 3px;font-size: small;">California, United States</p>
-            </ion-item>
-            <ion-item lines="none" style="margin-left: -15px;">
-              <ion-button shape="round" color="light" size="small" style="padding:0px; padding-right: 5px;">
-                <ion-icon style="font-size: 15px;" name="chevron-back-outline"></ion-icon>
-              </ion-button>
-              <ion-button shape="round" color="light" size="small" style="padding:0px;">
-                <ion-icon style="font-size: 15px;" name="chevron-forward-outline"></ion-icon>
-              </ion-button>
-              <div style="position:absolute; right:0;">
-                <ion-icon style="padding: 5px;font-size: 20px; " name="star-outline"></ion-icon>
-                <ion-icon style="padding: 5px;font-size: 20px;" name="chatbox-outline"></ion-icon>
-                <ion-icon style="padding: 5px;font-size: 20px;" name="bookmark-outline"></ion-icon>
-              </div>
-            </ion-item>
-          </ion-card>
-
-        </ion-col>
-
-        <ion-col>
-          <ion-card>
-            <div style="margin-top:10px; margin-left: 10px;">
-              <ion-avatar style="width:100% !important;  
-           height : 100% !important;  
-           max-width: 120px !important; 
-           max-height: 120px !important; ">
-                <img src="./assets/2.png" />
-              </ion-avatar>
-              <p
-                style=" margin-right: 3px; margin-bottom: 2px; font-weight: bold;  margin-top: -100px;   margin-left: 140px; color: #2a416f!important;">
-                @manov1</p>
-              <p
-                style="margin-right: 3px; margin-bottom: 2px;   margin-top: 0px;  margin-left: 140px;color: #868e96!important;    font-size: 12px;">
-                manov patel </p>
-              <p
-                style=" margin-right: 3px;  margin-top: 9px;    margin-left: 140px; color: #868e96!important;    font-size: 14px;">
-                Be confident and be kind to your body</p>
-            </div>
-
-            <ion-grid>
-              <ion-row>
-                <ion-col style="margin-left: 50px;">
-                  <p style="    color: #000;
-                 font-size: 30px;
-                 font-weight: 700; margin-bottom: 0px;">270K</p>
-                  <p style="font-size: 14px;
-                 font-weight: 400;color: #868e96!important;margin-top: 5px; "> FOLLOWERS</p>
-                </ion-col>
-                <ion-col>
-                  <p style="    color: #000;
-                 font-size: 30px;
-                 font-weight: 700; margin-bottom: 0px;">13.0%</p>
-                  <p style="font-size: 14px;
-                 font-weight: 400;color: #868e96!important;margin-top: 5px;">ENGAGEMENT</p>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col style="margin-left: -15px;    padding: 0px;">
-                  <ion-item lines="none">
-
-                    <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
-                    <p style="margin-left: 3px; font-size: small;">Plus Size</p>
-                  </ion-item>
-                </ion-col>
-                <ion-col style="   margin-left: -80px;padding: 0px; ">
-                  <ion-item lines="none">
-                    <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
-                    <p style="margin-left: 3px;font-size: small;">Fashion</p>
-                  </ion-item>
-
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item style="margin-top: -19px; margin-left: -15px;">
-              <ion-icon style=" font-size: 15px;" name="location"></ion-icon>
-              <p style="margin-left: 3px;font-size: small;">California, United States</p>
-            </ion-item>
-            <ion-item lines="none" style="margin-left: -15px;">
-              <ion-button shape="round" color="light" size="small" style="padding:0px; padding-right: 5px;">
-                <ion-icon style="font-size: 15px;" name="chevron-back-outline"></ion-icon>
-              </ion-button>
-              <ion-button shape="round" color="light" size="small" style="padding:0px;">
-                <ion-icon style="font-size: 15px;" name="chevron-forward-outline"></ion-icon>
-              </ion-button>
-              <div style="position:absolute; right:0;">
-                <ion-icon style="padding: 5px;font-size: 20px; " name="star-outline"></ion-icon>
-                <ion-icon style="padding: 5px;font-size: 20px;" name="chatbox-outline"></ion-icon>
-                <ion-icon style="padding: 5px;font-size: 20px;" name="bookmark-outline"></ion-icon>
-              </div>
-            </ion-item>
-          </ion-card>
-
-        </ion-col>
-
-        <ion-col>
-          <ion-card>
-            <div style="margin-top:10px; margin-left: 10px;">
-              <ion-avatar style="width:100% !important;  
-           height : 100% !important;  
-           max-width: 120px !important; 
-           max-height: 120px !important; ">
-                <img src="./assets/2.png" />
-              </ion-avatar>
-              <p
-                style=" margin-right: 3px; margin-bottom: 2px; font-weight: bold;  margin-top: -100px;   margin-left: 140px; color: #2a416f!important;">
-                @manov1</p>
-              <p
-                style="margin-right: 3px; margin-bottom: 2px;   margin-top: 0px;  margin-left: 140px;color: #868e96!important;    font-size: 12px;">
-                manov patel </p>
-              <p
-                style=" margin-right: 3px;  margin-top: 9px;    margin-left: 140px; color: #868e96!important;    font-size: 14px;">
-                Be confident and be kind to your body</p>
-            </div>
-
-            <ion-grid>
-              <ion-row>
-                <ion-col style="margin-left: 50px;">
-                  <p style="    color: #000;
-                 font-size: 30px;
-                 font-weight: 700; margin-bottom: 0px;">270K</p>
-                  <p style="font-size: 14px;
-                 font-weight: 400;color: #868e96!important;margin-top: 5px; "> FOLLOWERS</p>
-                </ion-col>
-                <ion-col>
-                  <p style="    color: #000;
-                 font-size: 30px;
-                 font-weight: 700; margin-bottom: 0px;">13.0%</p>
-                  <p style="font-size: 14px;
-                 font-weight: 400;color: #868e96!important;margin-top: 5px;">ENGAGEMENT</p>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col style="margin-left: -15px;    padding: 0px;">
-                  <ion-item lines="none">
-
-                    <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
-                    <p style="margin-left: 3px; font-size: small;">Plus Size</p>
-                  </ion-item>
-                </ion-col>
-                <ion-col style="   margin-left: -80px;padding: 0px; ">
-                  <ion-item lines="none">
-                    <ion-icon style=" font-size: 15px;" name="pricetag"></ion-icon>
-                    <p style="margin-left: 3px;font-size: small;">Fashion</p>
-                  </ion-item>
-
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-            <ion-item style="margin-top: -19px; margin-left: -15px;">
-              <ion-icon style=" font-size: 15px;" name="location"></ion-icon>
-              <p style="margin-left: 3px;font-size: small;">California, United States</p>
-            </ion-item>
-            <ion-item lines="none" style="margin-left: -15px;">
-              <ion-button shape="round" color="light" size="small" style="padding:0px; padding-right: 5px;">
-                <ion-icon style="font-size: 15px;" name="chevron-back-outline"></ion-icon>
-              </ion-button>
-              <ion-button shape="round" color="light" size="small" style="padding:0px;">
-                <ion-icon style="font-size: 15px;" name="chevron-forward-outline"></ion-icon>
-              </ion-button>
-              <div style="position:absolute; right:0;">
-                <ion-icon style="padding: 5px;font-size: 20px; " name="star-outline"></ion-icon>
-                <ion-icon style="padding: 5px;font-size: 20px;" name="chatbox-outline"></ion-icon>
-                <ion-icon style="padding: 5px;font-size: 20px;" name="bookmark-outline"></ion-icon>
-              </div>
-            </ion-item>
-          </ion-card>
-
-        </ion-col>
       </ion-row>
     </ion-grid>
 
   </div>
+  </div>
+</div>
+
 </ion-content>

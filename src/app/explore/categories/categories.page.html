@@ -1,18 +1,31 @@
-<ion-header>
-	<ion-toolbar>
-    <ion-buttons fill="outline" slot="end">
-			<ion-button (click)="dismiss()">
-				Cancel
-			</ion-button>
-		</ion-buttons>
-	</ion-toolbar>
-</ion-header>
-
 
 <!-- <ion-range color="danger" pin="true"></ion-range> -->
 <ion-content>
 		
-	<ion-item>
-		<ion-range mak="1000000" color="danger" pin="true"></ion-range>
-	  </ion-item>
+	<ion-header>
+		<ion-toolbar>
+		<ion-buttons fill="outline" color="dark" slot="end" (click)="dismiss()">
+				<ion-icon name="close-outline"></ion-icon>
+			</ion-buttons>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+	  <p style="font-weight: bold; padding-left: 10px;">Categories  <ion-icon name="information-circle"></ion-icon></p> 
+	  <div style="margin-bottom: 10px;">
+		<ion-toolbar>
+			<ion-searchbar [(ngModel)]="value"
+			mode="md" inputmode="text" placeholder="Select Categories"></ion-searchbar>
+		</ion-toolbar>
+	
+		<div *ngIf='!entered'>
+			<div *ngFor="let category of categories" class="countryDiv">
+				<ion-item *ngIf="(category.substring(0,value.length).toLowerCase() == value.toLowerCase().trim())||(value.toLowerCase().trim().split(' ').join('')==category.toLowerCase().split(' ').join('').slice(0,value.toLowerCase().trim().split(' ').join('').length))" (click)="Count(category)">
+					{{ category }}
+				</ion-item>
+			</div>
+		</div>
+	</div>
+	<ion-button color='success' (click)="Submit()" style="padding-left: 10px;">Apply</ion-button>
+
+	
 </ion-content>

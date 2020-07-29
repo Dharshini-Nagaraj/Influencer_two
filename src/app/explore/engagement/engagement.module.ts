@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ExplorePageRoutingModule } from './explore-routing.module';
+import { EngagementPageRoutingModule } from './engagement-routing.module';
 
-import { ExplorePage } from './explore.page';
-import { FilterPipe } from '../home/filter.pipe';
+import { EngagementPage } from './engagement.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ExplorePageRoutingModule
+    EngagementPageRoutingModule
   ],
-  declarations: [ExplorePage,FilterPipe]
+  declarations: [EngagementPage]
 })
-export class ExplorePageModule {}
+export class EngagementPageModule {}

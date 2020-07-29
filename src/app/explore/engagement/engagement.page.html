@@ -1,0 +1,20 @@
+
+<ion-content>
+
+  <p style="font-weight: bold; padding-left: 10px;">Engagement Score <ion-icon name="information-circle"></ion-icon></p> 
+
+<!-- <ion-range color="danger" pin="true" max="100000"></ion-range> -->
+<ion-item lines="none">
+  <ion-range id="dual-range" dual-knobs pin color="dark" min="5000" max="1000000" step="5000" >
+  </ion-range>
+</ion-item>
+<p style="font-weight: bold; padding-left: 10px;">Engagement% <ion-icon name="information-circle"></ion-icon></p> 
+
+<!-- <ion-range color="danger" pin="true" max="100000"></ion-range> -->
+<ion-item lines="none">
+  <ion-range  pin color="dark" min="0" max="30" step="1" >
+  </ion-range>
+</ion-item>
+<ion-button color="light" size="medium" (click)="dismiss()" style="padding-left: 10px;">Clear</ion-button>
+<ion-button color="success" size="medium" style="float: right; padding-right: 10px;">Submit</ion-button>
+</ion-content>

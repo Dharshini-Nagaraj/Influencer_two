@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ExplorePageRoutingModule } from './explore-routing.module';
+import { FollowersPageRoutingModule } from './followers-routing.module';
 
-import { ExplorePage } from './explore.page';
-import { FilterPipe } from '../home/filter.pipe';
+import { FollowersPage } from './followers.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ExplorePageRoutingModule
+    FollowersPageRoutingModule
   ],
-  declarations: [ExplorePage,FilterPipe]
+  declarations: [FollowersPage]
 })
-export class ExplorePageModule {}
+export class FollowersPageModule {}
