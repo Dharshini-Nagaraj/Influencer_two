@@ -83,7 +83,12 @@ const routes: Routes = [
   {
     path: 'channel',
     loadChildren: () => import('./explore/channel/channel.module').then( m => m.ChannelPageModule)
+  },
+  {
+    path: 'subscribers',
+    loadChildren: () => import('./explore/subscribers/subscribers.module').then( m => m.SubscribersPageModule)
   }
+
 
 
 

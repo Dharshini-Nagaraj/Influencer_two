@@ -1,15 +1,13 @@
 
 <ion-content>
 
-  <p style="font-weight: bold; padding-left: 10px;">Channel Creation Date
-       <ion-icon name="information-circle"></ion-icon></p>
+  <p style="font-weight: bold; padding-left: 10px;">Subscribers   <ion-icon name="information-circle"></ion-icon></p> 
+
+<!-- <ion-range color="danger" pin="true" max="100000"></ion-range> -->
 <ion-item lines="none">
-  
-  <ion-range id="dual-range" dual-knobs pin color="dark" min="1000" max="2000" step="100">
-    
+  <ion-range id="dual-range" dual-knobs pin color="dark" min="1000" max="2000" step="100" >
   </ion-range>
 </ion-item>
-
 <ion-button color="light" size="medium" (click)="dismiss()" style="padding-left: 10px;">Clear</ion-button>
 <ion-button color="success" size="medium" style="float: right; padding-right: 10px;">Submit</ion-button>
 </ion-content>

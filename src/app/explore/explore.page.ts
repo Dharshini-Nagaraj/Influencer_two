@@ -13,6 +13,7 @@ import { ContactYoutubePage } from './contact-youtube/contact-youtube.page';
 import { ViewsPage } from './views/views.page';
 import { VideosPage } from './videos/videos.page';
 import { ChannelPage } from './channel/channel.page';
+import { SubscribersPage } from './subscribers/subscribers.page';
 
 @Component({
   selector: 'app-explore',
@@ -67,6 +68,13 @@ export class ExplorePage implements OnInit {
   toast.present();
 
 } 
+
+async presentSubscriber() {
+  const popover = await this.popoverController.create({
+    component: SubscribersPage,
+  });
+  return await popover.present();
+}
 async presentVideos() {
   const popover = await this.popoverController.create({
     component: VideosPage,
